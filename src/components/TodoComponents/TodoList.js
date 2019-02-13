@@ -5,14 +5,12 @@ import React from 'react'
 
 import Todo from './Todo'
 
-import './Todo.css'
-
 /**
  * takes in todo list and render todo cards
  */
 const TodoList = (props) => {
     return(
-        <div>
+        <div className = 'todoList'>
             <ul>
                 {
                     props.todos.map((todo, index) => <Todo index = {index} key = {todo.id} todo = {todo} toggle = {props.toggle}/>)

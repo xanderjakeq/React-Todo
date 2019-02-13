@@ -5,7 +5,7 @@ import React from 'react'
  */
 const Todo = (props) => {
     return (
-        <li onClick = { () => {
+        <li className = {props.todo.completed ? 'done' : 'todoItem'} onClick = { () => {
 
             // toggle completed
             props.todo.completed = !props.todo.completed     
@@ -13,8 +13,9 @@ const Todo = (props) => {
             props.toggle({
                 todo: props.todo,
                 index: props.index
-            })}}>
-            <p  className = {props.todo.completed ? 'done' : null}>{props.todo.task}</p> 
+            })}}
+            >
+            <p>{props.todo.task}</p> 
         </li>
     )
 }
