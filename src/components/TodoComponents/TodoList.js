@@ -5,18 +5,21 @@ import React from 'react'
 
 import Todo from './Todo'
 
+import './Todo.css'
+
 /**
  * takes in todo list and render todo cards
  */
-TodoList = (props) => {
+const TodoList = (props) => {
     return(
         <div>
             <ul>
                 {
-                    // mapp <dodo
-                    props.todos.map(todo => <Todo todo = {todo}/>)
+                    props.todos.map((todo, index) => <Todo index = {index} key = {todo.id} todo = {todo} toggle = {props.toggle}/>)
                 }
             </ul>
         </div>
     )
 } 
+
+export default TodoList;

@@ -12,6 +12,7 @@ class App extends React.Component {
 
     this.state = {
       todos : [],
+      input: ''
     }
   }
 
@@ -21,16 +22,36 @@ class App extends React.Component {
     const name = target.name;
 
     this.setState({
-      [name]: value
+      [name]: value,
+      
     });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const newTodo = {
+      task: this.state.input,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      todos: [...this.state.todos, newTodo],
+      input: ''
+    })
+  }
+
+  handleTodoClick = (todoData) => {
+    console.log()
+    this.setState({
+      todo: [...this.state.todos].splice(todoData.index, 1, todoData.todo)
+    })
   }
   
   render() {
     return (
       <div>
-        <TodoList todos = {this.state.todos} />
-
-        <TodoForm onchange = {this.handleInputChange} value = {this.inputValue} sumbit = {this.handleSubmit} />
+        <TodoList todos = {this.state.todos} toggle = {this.handleTodoClick}/>
+        <TodoForm handleInputChange = {this.handleInputChange} name = 'input' value={this.state.input} submit = {this.handleSubmit} />
       </div>
     );
   }

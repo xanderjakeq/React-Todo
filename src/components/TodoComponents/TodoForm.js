@@ -1,11 +1,15 @@
 import React from 'react'
 
-TodoForm = (props) => {
+/**
+ * Takes input and add todo to list 
+ */
+const TodoForm = (props) => {
     return (
-        <form>
-            <input type='text' value = {} onChange = {} />
-            <input type='submit' />
+        <form onSubmit = { props.submit}>
+            <input type='text' name = {props.name} value = {props.value} onChange = { props.handleInputChange} />
+            <button type='submit'> Submit </button>
         </form>
     )
 }
 
+export default TodoForm;
