@@ -11,8 +11,6 @@ const Todo = (props) => {
         left: `${props.todo.indent}px`
     }
 
-    console.log(props.todo.indent)
-
     return (
         <li style = {indent} className = {props.todo.completed ? 'done' : 'todoItem'} onClick = { () => {
 

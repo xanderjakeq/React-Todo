@@ -93,7 +93,7 @@ class App extends React.Component {
         <p>{`start line with > or < to increase/decrease indentation`}</p>
         <TodoList indent = {this.state.indent} todos = {this.state.todos} toggle = {this.handleTodoClick}/>
         <TodoForm handleInputChange = {this.handleInputChange} name = 'input' value={this.state.input} submit = {this.handleSubmit} />
-        <button onClick = {this.handleClearCompleted} className = 'clearButton'> Clear completed</button>
+        <button onClick = {this.handleClearCompleted} className = 'clearButton'>Delete Selected</button>
       </div>
     );
   }
