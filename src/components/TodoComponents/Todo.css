@@ -31,7 +31,7 @@ ul {
   width: 520px;
 }
 #root .todoList li {
-  background-color: #DACF9C;
+  background-color: #FBF9F9;
   margin: 0 0 5px;
   font-size: 2rem;
   width: 100%;
@@ -41,7 +41,7 @@ ul {
   cursor: pointer;
 }
 #root .todoList .done {
-  background-color: #6EAA91;
+  background-color: #56C073;
   color: white;
 }
 #root .todoForm input {
@@ -58,7 +58,7 @@ ul {
 #root .clearButton {
   width: 100%;
   height: auto;
-  background: #263D3A;
+  background: #222632;
   color: white;
   border: none;
   font-size: 2rem;
