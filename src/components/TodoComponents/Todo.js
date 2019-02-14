@@ -24,7 +24,7 @@ const Todo = (props) => {
                 index: props.index
             })}}
             >
-            <p>{props.todo.task}</p> 
+            <p>{`${props.index+1} ${props.todo.task}`}</p> 
         </li>
     )
 }

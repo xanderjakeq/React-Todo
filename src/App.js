@@ -5,18 +5,29 @@ import TodoList from './components/TodoComponents/TodoList'
 
 import './components/TodoComponents/Todo.css'
 
+const localStorage = window.localStorage;
+
 
 class App extends React.Component {
   
   constructor(props){
     super(props)
 
-    this.state = {
+    this.state = localStorage.getItem('todos') ? {
+      todos : JSON.parse(localStorage.getItem('todos')),
+      input: '',
+      indent: 0,
+      indentIncrement: 40
+    }:{
       todos : [],
       input: '',
       indent: 0,
       indentIncrement: 40
     }
+  }
+
+  componentDidUpdate(){
+    localStorage.setItem('todos', JSON.stringify(this.state.todos))
   }
 
   handleInputChange = (event) => {
