@@ -42,9 +42,13 @@ class App extends React.Component {
   }
 
   handleTodoClick = (todoData) => {
-    console.log()
+    
+    let prevTodos = this.state.todos
+
+    prevTodos.splice(todoData.index, 1, todoData.todo)
+
     this.setState({
-      todo: [...this.state.todos].splice(todoData.index, 1, todoData.todo)
+      todos: prevTodos
     })
   }
 
