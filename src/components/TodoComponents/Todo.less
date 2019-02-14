@@ -18,9 +18,18 @@ ul{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     div{
         width: 500px;
+    }
+
+    
+
+    .todosCount{
+        font-weight: 100;
+        font-size: 5rem;
+        margin: auto;
     }
 
     .todoList{
@@ -28,6 +37,7 @@ ul{
 
         overflow-y: scroll;
         height: 500px;
+
 
         li{
             background-color: @todo-default;
@@ -56,6 +66,11 @@ ul{
             width: 100%;
             font-size: 2rem;
             overflow: visible;
+            border: none;
+            
+            &:focus{
+                outline: none;
+            }
         }
     }
 
@@ -65,7 +80,6 @@ ul{
         background: @dark-green;
         color: white;
         border: none;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 2rem;
         cursor: pointer;
     }

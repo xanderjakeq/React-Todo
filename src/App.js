@@ -36,7 +36,7 @@ class App extends React.Component {
       completed: false
     }
     this.setState({
-      todos: [...this.state.todos, newTodo],
+      todos: [newTodo, ...this.state.todos],
       input: ''
     })
   }
@@ -57,6 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <h2>Todos: <span className = "todosCount">{this.state.todos.length}</span></h2>
         <TodoList todos = {this.state.todos} toggle = {this.handleTodoClick}/>
         <TodoForm handleInputChange = {this.handleInputChange} name = 'input' value={this.state.input} submit = {this.handleSubmit} />
         <button onClick = {this.handleClearCompleted} className = 'clearButton'> Clear completed</button>

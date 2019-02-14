@@ -11,9 +11,15 @@ ul {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #root div {
   width: 500px;
+}
+#root .todosCount {
+  font-weight: 100;
+  font-size: 5rem;
+  margin: auto;
 }
 #root .todoList {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -40,6 +46,10 @@ ul {
   width: 100%;
   font-size: 2rem;
   overflow: visible;
+  border: none;
+}
+#root .todoForm input:focus {
+  outline: none;
 }
 #root .clearButton {
   width: 100%;
@@ -47,7 +57,6 @@ ul {
   background: #263D3A;
   color: white;
   border: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
   cursor: pointer;
 }
