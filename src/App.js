@@ -13,7 +13,9 @@ class App extends React.Component {
 
     this.state = {
       todos : [],
-      input: ''
+      input: '',
+      indent: 0,
+      indentIncrement: 40
     }
   }
 
@@ -30,14 +32,29 @@ class App extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+
+    let newTask = this.state.input
+    let indent = this.state.indent
+    if(newTask.charAt(0) ===  '>' || newTask.charAt(0) ===  '<'){
+      if(newTask.charAt(0) ===  '>'){
+          indent += this.state.indentIncrement
+      }else if(newTask.charAt(0) ===  '<' && indent > 0){
+        indent -= this.state.indentIncrement
+      }
+      newTask = newTask.substring(1)
+    }
+
+
     const newTodo = {
-      task: this.state.input,
+      task: newTask,
       id: Date.now(),
-      completed: false
+      completed: false,
+      indent: indent
     }
     this.setState({
-      todos: [newTodo, ...this.state.todos],
-      input: ''
+      todos: [ ...this.state.todos, newTodo],
+      input: '',
+      indent: indent
     })
   }
 
@@ -61,8 +78,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Todos: <span className = "todosCount">{this.state.todos.length}</span></h2>
-        <TodoList todos = {this.state.todos} toggle = {this.handleTodoClick}/>
+        <h2>Lines: <span className = "todosCount">{this.state.todos.length}</span></h2>
+        <p>{`start line with > or < to increase/decrease indentation`}</p>
+        <TodoList indent = {this.state.indent} todos = {this.state.todos} toggle = {this.handleTodoClick}/>
         <TodoForm handleInputChange = {this.handleInputChange} name = 'input' value={this.state.input} submit = {this.handleSubmit} />
         <button onClick = {this.handleClearCompleted} className = 'clearButton'> Clear completed</button>
       </div>

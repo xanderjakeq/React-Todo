@@ -1,11 +1,20 @@
 import React from 'react'
 
+
+
+
 /**
  * Render a todo Item 
  */
 const Todo = (props) => {
+    const indent = {
+        left: `${props.todo.indent}px`
+    }
+
+    console.log(props.todo.indent)
+
     return (
-        <li className = {props.todo.completed ? 'done' : 'todoItem'} onClick = { () => {
+        <li style = {indent} className = {props.todo.completed ? 'done' : 'todoItem'} onClick = { () => {
 
             // toggle completed
             props.todo.completed = !props.todo.completed     

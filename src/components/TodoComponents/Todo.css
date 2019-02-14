@@ -29,6 +29,7 @@ ul {
   overflow-y: scroll;
   height: 500px;
   width: 520px;
+  position: relative;
 }
 #root .todoList li {
   background-color: #FBF9F9;
@@ -39,6 +40,7 @@ ul {
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
+  position: relative;
 }
 #root .todoList .done {
   background-color: #56C073;

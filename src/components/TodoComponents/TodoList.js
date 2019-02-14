@@ -13,7 +13,7 @@ const TodoList = (props) => {
         <div className = 'listContainer'>
             <ul className = 'todoList'>
                 {
-                    props.todos.map((todo, index) => <Todo index = {index} key = {todo.id} todo = {todo} toggle = {props.toggle}/>)
+                    props.todos.map((todo, index) => <Todo indent = {props.indent} index = {index} key = {todo.id} todo = {todo} toggle = {props.toggle}/>)
                 }
             </ul>
         </div>
