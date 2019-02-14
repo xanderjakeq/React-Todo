@@ -10,8 +10,8 @@ import Todo from './Todo'
  */
 const TodoList = (props) => {
     return(
-        <div className = 'todoList'>
-            <ul>
+        <div className = 'listContainer'>
+            <ul className = 'todoList'>
                 {
                     props.todos.map((todo, index) => <Todo index = {index} key = {todo.id} todo = {todo} toggle = {props.toggle}/>)
                 }

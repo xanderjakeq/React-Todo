@@ -21,10 +21,14 @@ ul {
   font-size: 5rem;
   margin: auto;
 }
+#root .listContainer {
+  overflow: hidden;
+}
 #root .todoList {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow-y: scroll;
   height: 500px;
+  width: 520px;
 }
 #root .todoList li {
   background-color: #DACF9C;
